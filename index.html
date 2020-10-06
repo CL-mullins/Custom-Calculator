@@ -8,10 +8,128 @@
         <input type = "date" id="input-birthdate" name="birth-date"
             value="2020-10-03"
             min="1930-01-01" max="2020-10-03"></h3>
-    <h3><p>Time of Birth</p>
-        <input type="time" id="input-birthtime" name="birth-time"
-        min="00:00" max="24:00" required></h3>
+
+    <h3>Zodiac Sign</h3>
+
+    <span id = "zodiac-sign"></span>
 <script>
-    
+    //Stores input-birthtime and input-birthdate functions
+    //Does calculations for birth chart
+    const birthdate = document.querySelector("#input-birthdate")
+    var day
+    var month
+    const spanDisplay = document.querySelector("#zodiac-sign")
+    console.log(day)
+    console.log(month)
+    console.log(birthdate.value)
+    birthdate.addEventListener('input',getZodiacSign)
+
+function getZodiacSign() {
+    var month = birthdate.value.slice(5,7)
+    var day = birthdate.value.slice(8,10)
+
+    if(month == 01){
+        if (day <= 19){
+            spanDisplay.innerHTML= "Capricorn"
+        }
+        else if (day >= 20){
+            spanDisplay.innerHTML= "Aquarius"
+        }
+    }
+    else if(month == 02){
+       if (day <= 19){
+           spanDisplay.innerHTML = "Aquarius"
+       }
+       else if (day >= 20){
+           spanDisplay.innerHTML = "Pisces"
+       } 
+    }
+    else if(month == 03){
+        if (day <= 19){
+            spanDisplay.innerHTML = "Pisces"
+        }
+        else if (day >= 20){
+            spanDisplay.innerHTML = "Aries"
+        }
+        
+    }
+    else if(month == 04){
+        if (day <= 19){
+            spanDisplay.innerHTML = "Aries"
+        }
+        else if (day >= 20){
+            spanDisplay.innerHTML = "Taurus"
+        }
+    }
+    else if(month == 05){
+        if (day <= 19){
+            spanDisplay.innerHTML = "Taurus"
+    }
+    else if (day >= 20){  
+            spanDisplay.innerHTML = "Gemini" 
+    }
+    }
+    else if(month == 06){
+        if (day <= 19){
+            spanDisplay.innerHTML = "Gemini"
+    }
+    else if (day >= 20){ 
+            spanDisplay.innerHTML = "Cancer" 
+    }        
+    }
+    else if(month == 07){
+        if (day <= 19){
+            spanDisplay.innerHTML = "Cancer"
+    }
+    else if (day >= 20){   
+            spanDisplay.innerHTML = "Leo"
+    } 
+    }
+    else if(month == 08){
+        if (day <= 19){
+            spanDisplay.innerHTML = "Leo"
+    }
+    else if (day >= 20){  
+            spanDisplay.innerHTML = "Virgo" 
+    } 
+    }
+    else if(month == 09){
+        if (day <= 19){
+            spanDisplay.innerHTML = "Virgo"
+    }
+    else if (day >= 20){  
+            spanDisplay.innerHTML = "Libra" 
+    } 
+    }
+    else if(month == 10){
+        if (day <= 19){
+            spanDisplay.innerHTML = "Libra"
+
+    }
+    else if (day >= 20){   
+            spanDisplay.innerHTML = "Scorpio"
+    }    
+    }
+    else if(month == 11){
+        if (day <= 19){
+            spanDisplay.innerHTML = "Scorpio"
+    }
+    else if (day >= 20){  
+            spanDisplay.innerHTML = "Sagittarius" 
+    }
+    }
+    else if(month == 12){
+        if (day <= 19){
+            spanDisplay.innerHTML = "Sagittarius"
+
+    }
+    else if (day >= 20){  
+            spanDisplay.innerHTML = "Capricorn" 
+    }
+    }
+}
+
+
+        
 </script>    
 </body>
